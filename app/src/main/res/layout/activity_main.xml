@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <!-- Note: A RecyclerView can also be used -->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0C8DF3">
+
+        <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/topAppBar"
+            style="@style/Widget.AppCompat.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/app_bar_menu"
+            app:navigationIcon="@drawable/ic_baseline_menu_24"
+            app:title="Danh sách bài hát" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="599dp"
+        app:layout_anchorGravity="center"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <!-- Scrollable content -->
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            app:menu="@menu/bottom_navigation_menu"></android.support.design.widget.BottomNavigationView>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <ListView
+        android:id="@+id/ListView1"
+        android:layout_width="386dp"
+        android:layout_height="382dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="1dp"
+        app:layout_anchor="@+id/nestedScrollView"
+        app:layout_anchorGravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottom_navigation1" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_marginTop="710dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="82dp"
+            android:layout_height="59dp"
+            android:layout_marginLeft="10dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="34dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/next_previous_button_background"
+            app:srcCompat="@drawable/ic_baseline_pause_24" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="34dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="350dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/next_previous_button_background"
+            app:srcCompat="@android:drawable/ic_media_next" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="35dp"
+            android:background="#FFFFFF"
+            android:text="Tên ca sĩ" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="10dp"
+            android:background="#FFFFFF"
+            android:text="Tên bài hát" />
+    </android.support.v7.widget.CardView>
+</android.support.design.widget.CoordinatorLayout>
