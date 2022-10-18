@@ -1,4 +1,4 @@
-package com.example.app_music;
+package com.example.custom;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -6,9 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.app_music.MainActivity;
+import com.example.app_music.R;
 import com.example.model.Song;
 
 import java.util.List;

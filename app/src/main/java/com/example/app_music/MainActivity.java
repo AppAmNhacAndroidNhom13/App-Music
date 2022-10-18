@@ -4,10 +4,8 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Environment;
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
@@ -15,14 +13,14 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.DAO.DBHelperSong;
+import com.example.custom.CustomAdapterSong;
 import com.example.model.Song;
 
 import java.util.ArrayList;
@@ -35,15 +33,12 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private Button btn_Huy, btn_ThemBaiHat;
     private EditText edit_tenbaihat, edit_tencasi, edit_duongdanbaihat;
-    private String host;
     private int requestcode = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         //Đọc dữ liệu
         getData();
         //Tải dữ liệu lên custom adapter
@@ -109,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                         intent.putExtra("index_music", index_music);
                         if (SecondActivity.mediaPlayer != null) {
-                            SecondActivity.mediaPlayer.stop();
                             SecondActivity.mediaPlayer.release();
                         };
                         startActivity(intent);

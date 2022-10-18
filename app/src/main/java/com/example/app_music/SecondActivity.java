@@ -143,7 +143,6 @@ public class SecondActivity extends AppCompatActivity implements MediaPlayer.OnC
 
     private void clearMediaPlayer(MediaPlayer mp) {
         if (mp != null) {
-            mp.stop();
             mp.release();// this will clear memory
         }
     }
@@ -177,6 +176,7 @@ public class SecondActivity extends AppCompatActivity implements MediaPlayer.OnC
         } else {
             flag_music = 0;
         }
+
         imageButton.setImageResource(R.drawable.ic_baseline_pause_24);
         mediaPlayer = MediaPlayer.create(this, Uri.parse(MainActivity.list_music.get(flag_music).getPathSong()));
         mediaPlayer.setOnCompletionListener(this);
@@ -198,6 +198,7 @@ public class SecondActivity extends AppCompatActivity implements MediaPlayer.OnC
         mediaPlayer.setOnPreparedListener(this);
         mediaPlayer.setOnBufferingUpdateListener(this);
         mediaPlayer.start();
+
     }
 
     private void updateSeekbar() {
@@ -381,6 +382,7 @@ public class SecondActivity extends AppCompatActivity implements MediaPlayer.OnC
                 MediaPlayer.TrackInfo.MEDIA_TRACK_TYPE_TIMEDTEXT, mediaPlayer.getTrackInfo());
         if (textTrackIndex >= 0) {
             mediaPlayer.selectTrack(textTrackIndex);
+            System.out.println(mediaPlayer);
         } else {
             Log.w(TAG, "Cannot find text track!");
         }
